@@ -28,8 +28,6 @@ vite-react/                     # 根目录
 |  +- index.css                 # 全局样式
 |  |
 |  +- index.tsx                 # 主入口文件，处理全局配置并将根组件挂载到 index.html 上
-|  |
-|  +- vite-env.d.ts             # 环境变量声明文件，为 Vite 提供的内建环境变量和开发者自定义的环境变量提供类型信息，用于智能提示和类型检查
 |
 +- .eslintrc.cjs                # ESlint 配置文件
 |
@@ -40,6 +38,8 @@ vite-react/                     # 根目录
 +- tsconfig.json                # 配置 TypeScript 对工程源码和的工程配置文件编译选项，包括 tsconfig.node.json
 |
 +- tsconfig.node.json           # 配置 TypeScript 对工程配置文件（如 vite.config.ts）的编译选项
+|
++- vite-env.d.ts                # 环境变量声明文件，为 Vite 提供的内建环境变量和开发者自定义的环境变量提供类型信息，用于智能提示和类型检查
 |
 +- vite.config.js               # Vite 项目配置文件
 ```
