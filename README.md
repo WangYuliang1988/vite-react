@@ -8,6 +8,11 @@ React 学习工程
 2. 切换至工程目录，执行 `npm install`，安装工程所需依赖包；
 3. 执行 `npm run dev`，启动本地服务。
 
+## 使用 Redux
+
+1. 执行 `npm install @reduxjs/toolkit react-redux`，安装 Redux Toolkit 和 React Redux 包；
+2. 参考[官方教程](https://react-redux.js.org/tutorials/quick-start)，完成 Store 的创建和使用。
+
 ## 目录结构
 
 ```sh
@@ -21,6 +26,10 @@ vite-react/                     # 根目录
 |  |
 |  +- assets                    # 存放静态资源，该目录下的文件会被解析为模块依赖，通过相对路径引用
 |  |
+|  +- features                  # 存放自定义组件
+|  |
+|  +- store                     # 存放 Redux 仓库以及简化操作的 Hooks
+|  |
 |  +- App.css                   # App 组件样式
 |  |
 |  +- App.tsx                   # App 组件源码
@@ -30,6 +39,8 @@ vite-react/                     # 根目录
 |  +- index.tsx                 # 主入口文件，处理全局配置并将根组件挂载到 index.html 上
 |
 +- .eslintrc.cjs                # ESlint 配置文件
+|
++- .prettierrc.json             # Prettier 配置文件
 |
 +- index.html                   # 首页入口文件
 |
@@ -75,3 +86,11 @@ SWC (Sppedy Web Compiler) 是一个类 Babel 的工具，用于将采用 ECMAScr
 SWC 使用 Rust 编写，相比 Babel 具有更快的编译速度，目前已经可以成为 Babel 的成熟替代。
 
 参考：https://swc.rs/
+
+## Redux & React Redux
+
+[Redux](https://redux.js.org/introduction/getting-started) 是一个用于 JavaScript 应用的状态管理器。它是一个独立的库，可以被 React、Angular、Vue 等多种框架使用。
+
+在 React 等框架中使用 Redux 时，通常需要使用一个 “UI 绑定库”将 React 等框架和 Redux 连接起来，而不是直接在 UI 代码中同 Redux 仓库交互。
+
+[React Redux](https://react-redux.js.org/introduction/getting-started) 就是在 React 中使用 Redux 时需要用到的官方“UI 绑定库”，它使组件可以从 Redux store 中读取数据，以及向 store 分发 action 来更新数据。
