@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import store from './store/store.ts'
+import { RouterProvider } from 'react-router-dom'
+import router from './router/router.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   /**
@@ -18,9 +19,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
    * <StrictMode> 仅作用于开发阶段，不影响生产构建。
    */
   <React.StrictMode>
-    {/* React Redux 提供 Provider 组件将 store 提供给需要的组件。一般都是将顶层组件放在 Provider 内以使整个应用组件树都可以使用 store */}
+    {/* React Redux 提供 <Provider> 组件，用于注入 store 至指定组件。
+    一般都是将 store 注入应用顶层组件，以使整个组件树都可以访问 store。*/}
     <Provider store={store}>
-      <App />
+      {/* React Router 提供 <RouterProvider> 组件，用于激活路由及相关路由API。 */}
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 )

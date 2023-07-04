@@ -26,7 +26,11 @@ vite-react/                     # 根目录
 |  |
 |  +- assets                    # 存放静态资源，该目录下的文件会被解析为模块依赖，通过相对路径引用
 |  |
-|  +- features                  # 存放自定义组件
+|  +- features                  # 存放自定义功能组件
+|  |
+|  +- pages                     # 存放自定义页面组件
+|  |
+|  +- router                    # 存放路由配置文件
 |  |
 |  +- store                     # 存放 Redux 仓库以及简化操作的 Hooks
 |  |
@@ -94,3 +98,9 @@ SWC 使用 Rust 编写，相比 Babel 具有更快的编译速度，目前已经
 在 React 等框架中使用 Redux 时，通常需要使用一个 “UI 绑定库”将 React 等框架和 Redux 连接起来，而不是直接在 UI 代码中同 Redux 仓库交互。
 
 [React Redux](https://react-redux.js.org/introduction/getting-started) 就是在 React 中使用 Redux 时需要用到的官方“UI 绑定库”，它使组件可以从 Redux store 中读取数据，以及向 store 分发 action 来更新数据。
+
+## React Router
+
+[React Router](https://reactrouter.com/) 用于在 React 应用中实现“客户端导航”。
+
+在工程中通过执行 `npm i react-router-dom` 命令来安装 React Router。

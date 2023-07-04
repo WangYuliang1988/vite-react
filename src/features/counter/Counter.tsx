@@ -7,12 +7,10 @@ export function Counter() {
 
   return (
     <div>
-      <div>
-        <span>Use Redux: </span>
-        <button onClick={() => dispatch(increment())}>Inc</button>
-        <span>&nbsp;{count}&nbsp;</span>
-        <button onClick={() => dispatch(decrement())}>Dec</button>
-      </div>
+      <span>Use Redux: </span>
+      <button onClick={() => dispatch(increment())}>Inc</button>
+      <span>&nbsp;{count}&nbsp;</span>
+      <button onClick={() => dispatch(decrement())}>Dec</button>
     </div>
   )
 }
