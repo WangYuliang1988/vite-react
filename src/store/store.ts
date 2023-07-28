@@ -22,8 +22,10 @@ export default store
 
 // 获取 store 中包含的 state 和 dispatch 类型信息，分别命名为 RootState 和 AppDispatch 并导出。
 
-// RootState 可用于 useSelector 获取 state 时指定 state 的类型，以支持 TypeScript，如：useSelector((state: RootState) => state.counter.value)
+// RootState 可用于在调用 useSelector 时指定 state 的类型，如：useSelector((state: RootState) => state.counter.value)，以支持 TypeScript。
 export type RootState = ReturnType<typeof store.getState>
 
-// AppDispatch 可用于指定 useDispatch() 函数返回的 dispatch 的类型，以支持在 TypeScript 中通过 const dispatch: AppDispatch = useDispatch 调用 thunk
+// AppDispatch 可用于指定 useDispatch() 函数返回的 dispatch 的类型，如：const dispatch: AppDispatch = useDispatch()。
+// 因为 Redux Toolkit 库的 configureStore() 默认启用 redux-thunk，所以 AppDispatch 类型是 ThunkDispatch & Dispatch 类型。
+// 进而，在使用 TypeScript 时，可以通过指定 useDispatch() 返回的 dispatch 的类型是 AppDispatch，以支持 dispatch thunk function。
 export type AppDispatch = typeof store.dispatch
